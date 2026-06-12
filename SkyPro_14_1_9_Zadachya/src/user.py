@@ -1,4 +1,4 @@
-from SkyPro_14_1_9_Zadachya.src.task import Task
+from src.task import Task
 
 class User:
     username: str

@@ -1,6 +1,5 @@
 import pytest
 
-from oop_additional_tasks.lesson4.employee_2 import user
 from src.user import User
 from src.task import Task
 
