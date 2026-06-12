@@ -4,7 +4,7 @@ from src.user import User
 from src.task import Task
 
 
-# создаём для проверки: users_count и all_tasks_count
+# @pytest.fixture — это декоратор, превращает функцию в изолированный тестовый объект
 @pytest.fixture
 def first_user():
     return User(username="User",
@@ -16,8 +16,11 @@ def first_user():
                            ],
                 )
 
+
+# 1. Декоратор, который регистрирует функцию ниже как фикстуру Pytest
 @pytest.fixture
 def second_user():
+    # 2. Создаем и возвращаем объект класса User, заполняя его атрибуты
     return User(username="John",
                 email="john@mail.ru",
                 first_name="John",
