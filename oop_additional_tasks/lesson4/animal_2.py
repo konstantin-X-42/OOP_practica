@@ -34,5 +34,3 @@ for animal in animals:
         animal.bark()
     elif isinstance(animal, Cat):
         animal.meow()
-
-
