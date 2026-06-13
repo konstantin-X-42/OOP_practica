@@ -5,27 +5,34 @@
 
 class Animal:
 
-    def __init__(self, name):
-        pass
+    def __init__(self, name: str) -> None:
+        self.name = name
 
     def walk(self):
-        pass
+        print("Прогулка!")
 
 
 class Dog(Animal):
 
     def bark(self):
-        print("Bark!")
+        print("Гав!")
 
 
 class Cat(Animal):
 
     def meow(self):
-        print("Meow!")
+        print("Мяу!")
 
 
 animals = [Dog("Dog1"), Dog("Dog2"), Cat("Cat1"), Dog("Dog3")]
 
 for animal in animals:
-    # Должно выводиться Bark или Meow в зависимости от того какой класс
-    pass
+    # Должно выводиться Гав или Мяу в зависимости от того какой класс
+
+    # Проверяем класс животного и вызываем соответствующий метод
+    if isinstance(animal, Dog):
+        animal.bark()
+    elif isinstance(animal, Cat):
+        animal.meow()
+
+
