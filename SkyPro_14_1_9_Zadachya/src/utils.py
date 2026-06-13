@@ -58,7 +58,7 @@ if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     full_path = os.path.join(current_dir, "..", "data", "data.json")
 
-    # 1. читаем сырые данные из файла в переменную raw_data
+    # 1. читаем данные из файла в переменную raw_data
     raw_data = read_json(full_path)
 
     # 2. Передаем эти данные в функцию создания объектов
