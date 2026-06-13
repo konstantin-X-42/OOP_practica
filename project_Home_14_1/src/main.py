@@ -8,6 +8,9 @@ from project_Home_14_1.src.classes import Category, Product
 # запуск проверки
 # poetry run isort .; poetry run black .; poetry run flake8; poetry run mypy
 # ================================
+# запуск всех тестов
+# poetry run python -m pytest project_Home_14_1/tests/ --cov=project_Home_14_1/src --cov-report=html
+# ================================
 
 if __name__ == "__main__":
     product1 = Product(
