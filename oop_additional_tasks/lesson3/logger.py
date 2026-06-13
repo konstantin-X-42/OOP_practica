@@ -9,10 +9,10 @@
 
 class Logger:
     """Класс для записи логов в текстовый файл"""
+
     def __init__(self, filename: str):
         """Конструктор, принимающий имя файла для логов"""
         self.filename = filename
-
 
     def __call__(self, message: str) -> None:
         """Магический метод, позволяющий использовать объект как функцию.
@@ -23,6 +23,6 @@ class Logger:
             file.write(message + "\n")
 
 
-# код для проверки 
+# код для проверки
 logger = Logger("log.txt")
 logger("This is a test message.")

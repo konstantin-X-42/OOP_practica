@@ -16,28 +16,26 @@ import math
 class Rectangle:
     """Класс, описывающий прямоугольник"""
 
-
     def __init__(self, width: float | int, height: float | int):
         """Конструктор, принимающий ширину и высоту прямоугольника"""
 
-        self.width = width    # присваивает значение аргумента width свойству (атрибуту) self.width конкретного объекта
+        self.width = width  # присваивает значение аргумента width свойству (атрибуту) self.width конкретного объекта
         self.height = height
-
 
     def area(self) -> int | float:
         """Метод, возвращающий площадь прямоугольника"""
         return self.width * self.height
 
-
     def perimeter(self) -> int | float:
         """Метод, возвращающий периметр прямоугольника"""
         return 2 * (self.width + self.height)
 
-
     @classmethod
-    #-> "Rectangle": аннотация возвращаемого значения. Метод вернет готовый объект класса Rectangle.
+    # -> "Rectangle": аннотация возвращаемого значения. Метод вернет готовый объект класса Rectangle.
     # Строчные кавычки нужны, так как сам класс внутри себя еще полностью не объявлен.
-    def from_diagonal(cls, diagonal: float | int, aspect_ratio: float | int) -> "Rectangle":
+    def from_diagonal(
+        cls, diagonal: float | int, aspect_ratio: float | int
+    ) -> "Rectangle":
         """Класс-метод, создающий прямоугольник по диагонали и соотношению сторон"""
 
         # Используем теорему Пифагора: d^2 = w^2 + h^2, где w = h * aspect_ratio
@@ -46,7 +44,7 @@ class Rectangle:
         # math.sqrt(...) — функция из модуля math, извлекает квадратный корень из всего что внутри скобок
         # ** означают возведение в степень ** 2 - в квадрат
 
-        height = diagonal / math.sqrt(aspect_ratio ** 2 + 1)
+        height = diagonal / math.sqrt(aspect_ratio**2 + 1)
         width = height * aspect_ratio
         return cls(width, height)
 
@@ -57,12 +55,12 @@ class Rectangle:
         return width == height
 
 
-# код для проверки 
+# код для проверки
 rectangle = Rectangle(4, 5)
 # площадь
-print(rectangle.area())                                        # >>> 20
+print(rectangle.area())  # >>> 20
 # периметр
-print(rectangle.perimeter())                                   # >>> 18
+print(rectangle.perimeter())  # >>> 18
 
 rectangle2 = Rectangle.from_diagonal(5, 2)
 # прямоугольник по диагонали и соотношению сторон

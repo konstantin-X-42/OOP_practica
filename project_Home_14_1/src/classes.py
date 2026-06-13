@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Product:
     """Класс для представления товара."""
 
@@ -22,7 +25,7 @@ class Category:
 
     # Атрибуты класса для хранения общей информации
     category_count: int = 0  # Количество категорий
-    product_count: int = 0   # Количество уникальных товаров
+    product_count: int = 0  # Количество уникальных товаров
 
     def __init__(self, name: str, description: str, products: List[Product]):
         """Инициализация и сохранение параметров каждого объекта"""
@@ -39,4 +42,3 @@ class Category:
         # Автоматическое увеличение счетчиков при создании новой категории (Класс.атрибут)
         Category.category_count += 1
         Category.product_count += len(products)
-

@@ -3,6 +3,7 @@
 # poetry run pytest SkyPro_14_1_9_Zadachya/tests/test_task.py
 # ================================
 
+
 def test_task_init(task):
     assert task.name == "Купить огурцы"
     assert task.description == "Купить огурцы для салата"

@@ -1,4 +1,3 @@
-
 # poetry init
 
 """
@@ -22,11 +21,13 @@
 
 class Album:
     """Класс, описывающий музыкальный альбом"""
+
     def __init__(self, artist: str, title: str, tracks: list):
         """Инициализация полей альбома"""
         self.artist = artist  # Исполнитель
-        self.title = title    # Название
+        self.title = title  # Название
         self.tracks = tracks  # Список треков
+
 
 # Создаем два экземпляра (объекта) класса Album
 album_1 = Album(
@@ -37,12 +38,16 @@ album_1 = Album(
 
 
 album_2 = Album(
-                artist="Metallica",
-                title="Black Album",
-                tracks=["Enter Sandman", "Sad But True", "Holier Than Thou"],
-                )
+    artist="Metallica",
+    title="Black Album",
+    tracks=["Enter Sandman", "Sad But True", "Holier Than Thou"],
+)
 
 
-# код для проверки 
-print(album_1.artist, album_1.title, len(album_1.tracks), "треков")  # >>> Queen Killer Queen 3 треков
-print(album_2.artist, album_2.title, len(album_2.tracks), "треков")  # >>> Metallica Black Album 3 треков
+# код для проверки
+print(
+    album_1.artist, album_1.title, len(album_1.tracks), "треков"
+)  # >>> Queen Killer Queen 3 треков
+print(
+    album_2.artist, album_2.title, len(album_2.tracks), "треков"
+)  # >>> Metallica Black Album 3 треков

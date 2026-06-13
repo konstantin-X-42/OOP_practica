@@ -1,13 +1,14 @@
 from src.task import Task
 
+
 class User:
     username: str
     email: str
     first_name: str
     last_name: str
     task_list: list
-    users_count = 0       # переменная значение
-    all_tasks_count = 0   # переменная значение
+    users_count = 0  # переменная значение
+    all_tasks_count = 0  # переменная значение
 
     def __init__(self, username, email, first_name, last_name, task_list=None):
         if task_list is None:
@@ -18,10 +19,11 @@ class User:
         self.last_name = last_name
         self.task_list = task_list if task_list else []
 
-        User.users_count += 1      # при создании нового экз. увеличиваем значение на 1
+        User.users_count += 1  # при создании нового экз. увеличиваем значение на 1
 
         # если список передали - True, то увеличиваем на длину списка task_list, если None, то на 0
         User.all_tasks_count += len(task_list) if task_list else 0
+
 
 if __name__ == "__main__":
     task1 = Task("Купить огурцы", "Купить огурцы для салата")
@@ -30,7 +32,7 @@ if __name__ == "__main__":
     task4 = Task("Купить перец", "Купить перец для салата")
 
     # создаём экз. user
-    user =  User("User", "user@email", "User", "Userov", [task1, task2, task3, task4])
+    user = User("User", "user@email", "User", "Userov", [task1, task2, task3, task4])
     print(user.username)
     print(user.email)
     print(user.first_name)

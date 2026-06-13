@@ -17,18 +17,15 @@ class Point:
         self.x = x
         self.y = y
 
-
     def __repr__(self) -> str:
         """Магический метод для технического представления объекта.
         Возвращает строку, которую можно использовать для воссоздания объекта.
         """
         return f"Point({self.x}, {self.y})"
 
-
     def __str__(self) -> str:
         """Магический метод для пользовательского отображения точки"""
         return f"({self.x}, {self.y})"
-
 
     def __add__(self, other: "Point") -> "Point":
         """Магический метод, позволяющий складывать две точки.
@@ -44,12 +41,11 @@ class Point:
         return Point(new_x, new_y)
 
 
-
-# код для проверки 
+# код для проверки
 point1 = Point(1, 2)
-print(repr(point1))       # >>> Point(1, 2)
-print(str(point1))        # >>> (1, 2)
+print(repr(point1))  # >>> Point(1, 2)
+print(str(point1))  # >>> (1, 2)
 
 point2 = Point(3, 4)
 point3 = point1 + point2
-print(point3)             # >>> (4, 6)
+print(point3)  # >>> (4, 6)

@@ -1,5 +1,7 @@
 import json
+
 import pytest
+
 from project_Home_14_1.src.classes import Category, Product
 from project_Home_14_1.src.utils import load_data
 
@@ -8,13 +10,16 @@ from project_Home_14_1.src.utils import load_data
 # poetry run python -m pytest project_Home_14_1/tests/test_utils.py -v
 # ================================
 
+
 @pytest.fixture(autouse=True)
 def reset_category_counts():
     """Фикстура для автоматического сброса счетчиков класса перед каждым тестом."""
     Category.category_count = 0
     Category.product_count = 0
 
+
 # ================================
+
 
 def test_load_data_success(tmp_path):
     """Тест успешной загрузки корректных данных из JSON-файла."""
@@ -28,21 +33,17 @@ def test_load_data_success(tmp_path):
                     "name": "Смартфон",
                     "description": "Флагман",
                     "price": 50000.0,
-                    "quantity": 10
+                    "quantity": 10,
                 },
                 {
                     "name": "Наушники",
                     "description": "Беспроводные",
                     "price": 5000.0,
-                    "quantity": 2
-                }
-            ]
+                    "quantity": 2,
+                },
+            ],
         },
-        {
-            "name": "Книги",
-            "description": "Художественная литература",
-            "products": []
-        }
+        {"name": "Книги", "description": "Художественная литература", "products": []},
     ]
 
     # Создаем временный файл во временной папке pytest

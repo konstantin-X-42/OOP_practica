@@ -1,10 +1,12 @@
 import pytest
+
 from project_Home_14_1.src.classes import Category, Product
 
 # ================================
 # запуск тестов
 # poetry run python -m pytest project_Home_14_1/tests/test_classes.py -v
 # ================================
+
 
 @pytest.fixture
 def sample_products():
@@ -29,9 +31,12 @@ def reset_category_counts():
 
 # ================================
 
-def test_product_initialization(sample_products):   # в аргумент передаём фикстуру
+
+def test_product_initialization(sample_products):  # в аргумент передаём фикстуру
     """Тест корректности инициализации объекта класса Product."""
-    product = sample_products[0]   # запускаем функцию-фикстуру и подставляем первый элемент по индексу
+    product = sample_products[
+        0
+    ]  # запускаем функцию-фикстуру и подставляем первый элемент по индексу
 
     assert product.name == "Samsung"  # реальное значение == ожидаемое значение
     assert product.description == "Смартфон"
@@ -56,15 +61,15 @@ def test_category_and_product_count(sample_products):
     assert Category.product_count == 0
 
     # Создаем первую категорию с 2 товарами
-    cat1 = Category(
-        "Электроника", "Гаджеты", [sample_products[0], sample_products[1]]
-    )
+    cat1 = Category("Электроника", "Гаджеты", [sample_products[0], sample_products[1]])
 
     assert Category.category_count == 1
     assert Category.product_count == 2
+    assert cat1.name == "Электроника"
 
     # Создаем вторую категорию с 1 товаром
     cat2 = Category("Аксессуары", "Разное", [sample_products[2]])
+    assert cat2.name == "Аксессуары"
 
     # Проверяем итоговые значения счетчиков
     assert Category.category_count == 2

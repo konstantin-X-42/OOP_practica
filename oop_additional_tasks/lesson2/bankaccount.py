@@ -26,14 +26,12 @@ class BankAccount:
 
         self._balance = balance
 
-
     # @property это декоратор. Он говорит интерпретатору Python: «Сделай так, чтобы методы, написанные ниже,
     # можно было вызывать без скобок, как будто это простое свойство объекта».
     @property
     def balance(self) -> float | int:
         """Свойство, возвращающее текущий баланс счета"""
         return self._balance
-
 
     #  Создаём свой собственный метод (метод класса), который назвали deposit
     def deposit(self, amount: float | int):
@@ -43,7 +41,6 @@ class BankAccount:
         else:
             print("Сумма пополнения должна быть больше 0")
 
-
     #  Создаём свой собственный метод (метод класса), который назвали withdraw
     def withdraw(self, amount: float | int):
         """Метод, позволяющий снять деньги со счета"""
@@ -52,17 +49,15 @@ class BankAccount:
         else:
             print("Недостаточно средств или указана неверная сумма")
 
-
     #  Создаём свой собственный метод (метод класса), который назвали close
     def close(self) -> float | int:
         """Метод, который закрывает счет и возвращает оставшиеся на нем деньги"""
         remaining_balance = self._balance
-        self._balance = 0   # Счёт обнуляется после закрытия
+        self._balance = 0  # Счёт обнуляется после закрытия
         return remaining_balance
 
 
-
-# код для проверки 
+# код для проверки
 account = BankAccount(1000)
 print(account.balance)  # >>> 1000
 

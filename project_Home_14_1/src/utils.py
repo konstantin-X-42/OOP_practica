@@ -2,9 +2,10 @@ import json
 
 from project_Home_14_1.src.classes import Category, Product
 
+
 def load_data(file_path: str) -> list[Category]:
     """Читает JSON-файл и возвращает список объектов класса Category."""
-    categories_list =[]
+    categories_list = []
 
     # Открываем файл с явным указанием кодировки UTF-8 (чтобы не было проблем с кириллицей)
     with open(file_path, "r", encoding="utf-8") as file:
@@ -19,25 +20,26 @@ def load_data(file_path: str) -> list[Category]:
             for product_data in category_data.get("products", []):
                 # Создаем объект Product из данных словаря
                 product = Product(
-                                name=product_data["name"],
-                                description=product_data["description"],
-                                price=product_data["price"],
-                                quantity=product_data["quantity"],
-                                )
+                    name=product_data["name"],
+                    description=product_data["description"],
+                    price=product_data["price"],
+                    quantity=product_data["quantity"],
+                )
 
                 # записываем данные product в конец списка product_list
                 products_list.append(product)
 
             # 3. Создаем объект category и передаем список готовых ОБЪЕКТОВ Product в конструктор Category
             category = Category(
-                                name=category_data["name"],
-                                description=category_data["description"],
-                                products=products_list,      # Передаем объекты, а не словари!
-                                )
+                name=category_data["name"],
+                description=category_data["description"],
+                products=products_list,  # Передаем объекты, а не словари!
+            )
             # записываем данные category в конец списка categories_list
             categories_list.append(category)
 
     return categories_list
+
 
 # ================================
 # print
@@ -81,13 +83,15 @@ def load_data(file_path: str) -> list[Category]:
 # Всего категорий создано: 2
 # Всего уникальных товаров создано: 4
 #
-# Категория: Смартфоны (Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни)
+# Категория: Смартфоны (Смартфоны, как средство не только коммуникации,
+# но и получение дополнительных функций для удобства жизни)
 # Товары:
 #   - Samsung Galaxy C23 Ultra: 180000.0 руб. (в наличии: 5 шт.)
 #   - Iphone 15: 210000.0 руб. (в наличии: 8 шт.)
 #   - Xiaomi Redmi Note 11: 31000.0 руб. (в наличии: 14 шт.)
 # ------------------------------
-# Категория: Телевизоры (Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником)
+# Категория: Телевизоры (Современный телевизор, который позволяет
+# наслаждаться просмотром, станет вашим другом и помощником)
 # Товары:
 #   - 55" QLED 4K: 123000.0 руб. (в наличии: 7 шт.)
 # ------------------------------
