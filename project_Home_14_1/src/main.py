@@ -8,7 +8,7 @@ from project_Home_14_1.src.classes import Category, Product
 # запуск проверки
 # poetry run isort .; poetry run black .; poetry run flake8; poetry run mypy
 # ================================
-# запуск всех тестов
+# запуск всех тестов с покрытием
 # poetry run python -m pytest project_Home_14_1/tests/ --cov=project_Home_14_1/src --cov-report=html
 # ================================
 
