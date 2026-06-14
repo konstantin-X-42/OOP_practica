@@ -1,13 +1,16 @@
 import json
-import os   # библиотека для взаимодействия с операционной системой ПК
+import os  # библиотека для взаимодействия с операционной системой ПК
 
 from src.task import Task
 from src.user import User
 
+
 def read_json(path: str) -> dict:
     full_path = os.path.abspath(path)
-    with open(full_path, 'r', encoding="UTF8") as file:    # открываем файл по указанному пути
-        data = json.load(file)   # чтение файла
+    with open(
+        full_path, "r", encoding="UTF8"
+    ) as file:  # открываем файл по указанному пути
+        data = json.load(file)  # чтение файла
         return data
 
 
@@ -24,14 +27,14 @@ if __name__ == "__main__":
 
 
 # >>> [{'username': 'alex', 'email': 'alex@gmail.com', 'first_name': 'Alex', 'last_name': 'Tomas',
-      # 'task_list': [{'name': 'Купить батон', 'description': 'Купить батон когда будешь в магазине',
-      # 'created_at': '01.02.2024'}, {'name': 'Поиграть с собакой',
-      # 'description': 'Взять собаку и поехать к озеру поиграть и погулять', 'status': 'Выполнено',
-      # 'created_at': '13.02.2024'}, {'name': 'Встретиться с друзьями',
-      # 'description': 'Забронировать ресторан на 15.02 на встречу с 5 друзьями', 'status': 'Выполнено',
-      # 'created_at': '15.02.2024'}]}, {'username': 'john', 'email': 'john@gmail.com', 'first_name': 'John',
-      # 'last_name': 'Borg', 'task_list': [{'name': 'Сдать сессию',
-      # 'description': 'Сдать все экзамены до 15.02', 'created_at': '01.02.2024'}]}]
+# 'task_list': [{'name': 'Купить батон', 'description': 'Купить батон когда будешь в магазине',
+# 'created_at': '01.02.2024'}, {'name': 'Поиграть с собакой',
+# 'description': 'Взять собаку и поехать к озеру поиграть и погулять', 'status': 'Выполнено',
+# 'created_at': '13.02.2024'}, {'name': 'Встретиться с друзьями',
+# 'description': 'Забронировать ресторан на 15.02 на встречу с 5 друзьями', 'status': 'Выполнено',
+# 'created_at': '15.02.2024'}]}, {'username': 'john', 'email': 'john@gmail.com', 'first_name': 'John',
+# 'last_name': 'Borg', 'task_list': [{'name': 'Сдать сессию',
+# 'description': 'Сдать все экзамены до 15.02', 'created_at': '01.02.2024'}]}]
 
 
 def create_objects_from_json(data):
@@ -58,7 +61,7 @@ if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     full_path = os.path.join(current_dir, "..", "data", "data.json")
 
-    # 1. читаем сырые данные из файла в переменную raw_data
+    # 1. читаем данные из файла в переменную raw_data
     raw_data = read_json(full_path)
 
     # 2. Передаем эти данные в функцию создания объектов
@@ -75,4 +78,4 @@ if __name__ == "__main__":
 # >>> [<src.user.User object at 0x00000168DBDF9FD0>, <src.user.User object at 0x00000168DBDFE350>]
 # >>> alex
 # >>> [<src.task.Task object at 0x00000168DBDFA270>, <src.task.Task object at 0x00000168DBDFD1D0>,
-      # <src.task.Task object at 0x00000168DBDFD310>]
+# <src.task.Task object at 0x00000168DBDFD310>]

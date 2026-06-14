@@ -28,12 +28,12 @@ class Counter:
         self.value += 1
 
 
-# код для проверки 
+# код для проверки
 my_counter = Counter()
-print(my_counter())     # >>> 0
+print(my_counter())  # >>> 0
 
 my_counter.increment()
-print(my_counter())     # >>> 1
+print(my_counter())  # >>> 1
 
 my_counter.increment()
-print(my_counter())     # >>> 2
+print(my_counter())  # >>> 2

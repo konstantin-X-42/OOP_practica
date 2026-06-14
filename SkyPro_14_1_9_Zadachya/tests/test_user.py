@@ -11,6 +11,7 @@ from src.user import User
 # poetry run pytest SkyPro_14_1_9_Zadachya/tests/test_user.py --cov=SkyPro_14_1_9_Zadachya/src
 # ================================
 
+
 def test_user_init(first_user, second_user):
     assert first_user.username == "User"
     assert first_user.email == "user@mail.ru"

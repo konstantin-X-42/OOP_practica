@@ -20,7 +20,7 @@ class Shape:
     pass
 
 
-# код для проверки 
+# код для проверки
 shape = Shape("Shape")
 print(shape.area())  # 0
 

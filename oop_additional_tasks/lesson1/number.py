@@ -10,25 +10,22 @@
 `.substract(<значение>)` вычитает указанное число из value
 """
 
+
 class Number:
     """Класс для выполнения базовых математических операций с числом"""
-
 
     def __init__(self, value: int | float):
         """Инициализация объекта числовым значением"""
         self.value = value
 
-
     def get(self) -> int | float:
         """Возвращает текущее значение свойства атрибута value"""
         return self.value
 
-
     # создаём свой метод СЛОЖЕНИЕ (название свое любое)
     def add(self, number: int | float) -> None:
         """Добавляет указанное число к значению свойства атрибута value"""
-        self.value += number    # оператор += к атрибуту self.value прибавляет number и записывает обратно в self.value
-
+        self.value += number  # оператор += к атрибуту self.value прибавляет number и записывает обратно в self.value
 
     # создаём свой метод ВЫЧИТАНИЕ (название свое любое)
     def subtract(self, number: int | float) -> None:
@@ -36,10 +33,10 @@ class Number:
         self.value -= number
 
 
-# код для проверки 
+# код для проверки
 n = Number(7)  # n - это имя конкретного объекта экземпляра класса Number
 print(n.get())  # >>> 7
-n.add(3)      # вызываем свой метод сложения для объекта n
+n.add(3)  # вызываем свой метод сложения для объекта n
 print(n.get())  # >>> 10
 n.subtract(5)  # вызываем свой метод вычитания для объекта n
 print(n.get())  # >>> 5

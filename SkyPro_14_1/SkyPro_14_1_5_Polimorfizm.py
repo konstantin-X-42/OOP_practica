@@ -2,6 +2,7 @@
 # --------- ПОЛИМОРФИЗМ ----------
 # ================================
 
+
 class JavaDeveloper:
     """Класс для представления Java-разработчиков."""
 
@@ -35,12 +36,9 @@ class PythonDeveloper:
 
 
 # --- ДЕМОНСТРАЦИЯ ПОЛИМОРФИЗМА ---
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Создаем список из разработчиков разных направлений
-    developers = [
-        JavaDeveloper("Ivan"),
-        PythonDeveloper("Petr")
-    ]
+    developers = [JavaDeveloper("Ivan"), PythonDeveloper("Petr")]
 
     # Полиморфизм в действии: вызываем одинаковые методы в одном цикле, но каждый объект реагирует по-своему!
     for dev in developers:

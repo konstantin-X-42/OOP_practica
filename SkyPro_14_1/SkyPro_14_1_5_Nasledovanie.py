@@ -2,6 +2,7 @@
 # -------- НАСЛЕДОВАНИЕ ---------
 # ================================
 
+
 class Employee:
     """Класс сотрудника, который обладает общими свойствами и методами"""
 
@@ -10,14 +11,16 @@ class Employee:
         self.surname = surname
 
     def work(self):
-        print('Do some work')
+        print("Do some work")
 
     def go_to_vacation(self):
-        print('Go to vacation')
+        print("Go to vacation")
 
 
 # При наследовании указываем имя родительского класса в круглых скобках (Employee) при объявлении дочернего класса
-class Developer(Employee):            # <--- Developer наследует ВСЕ свойства и методы класса Employee
+class Developer(
+    Employee
+):  # <--- Developer наследует ВСЕ свойства и методы класса Employee
     """Дочерний класс от класса работника, который принимает и переопределяет некоторые свойства"""
 
     def __init__(self, name: str, surname: str, language: str, level: str):
@@ -32,15 +35,14 @@ class Developer(Employee):            # <--- Developer наследует ВСЕ
 
     def work(self):
         # Переопределенный метод (полиморфизм)
-        print('Write code')
+        print("Write code")
 
     def read_documentation(self):
-        print('Read documentation')
+        print("Read documentation")
 
 
-# ТЕПЕРЬ ВСЁ РАБОТАЕТ ИДЕАЛЬНО:
-if __name__ == '__main__':
-    dev = Developer(name='Ivan', surname='Ivanov', language='Python', level='Junior')
+if __name__ == "__main__":
+    dev = Developer(name="Ivan", surname="Ivanov", language="Python", level="Junior")
 
     print(dev.name)  # Выведет: Ivan (унаследовано от Employee)
     dev.go_to_vacation()  # Выведет: Go to vacation (унаследовано от Employee)

@@ -15,7 +15,7 @@ class Employee:
     pass
 
 
-# код для проверки 
+# код для проверки
 employee = Employee("John", 5000)
 print(employee.get_salary())  # 5000
 

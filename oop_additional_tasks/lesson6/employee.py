@@ -19,7 +19,7 @@ class Employee:
 
 
 # код для проверки
-employee = Employee('John', 30, 5000)
+employee = Employee("John", 30, 5000)
 # raises ValueError('Оплата труда не может быть меньше 16242')
 
 employee = Employee("Jane", 17, 50000)

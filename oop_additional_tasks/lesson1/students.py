@@ -16,7 +16,7 @@ class Student:
 
     def __init__(self, name: str, course: int):
         """Инициализация полей студента"""
-        self.name = name    # Имя (строка)
+        self.name = name  # Имя (строка)
         self.course = course  # Курс (целое число)
 
 
@@ -25,6 +25,6 @@ student_1 = Student(name="Алиса", course=3)
 student_2 = Student(name="Маргарита", course=2)
 
 
-# код для проверки 
+# код для проверки
 print(student_1.name, student_1.course)  # >>> Алиса 3
 print(student_2.name, student_2.course)  # >>> Маргарита 2
