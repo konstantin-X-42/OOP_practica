@@ -1,3 +1,7 @@
+import sys
+sys.path.append("C:/Users/User/PycharmProjects/OOP_practica")
+
+
 # Импортируем классы с учетом структуры ДЗ
 from project_Home_14_1.src.classes import Category, Product
 
