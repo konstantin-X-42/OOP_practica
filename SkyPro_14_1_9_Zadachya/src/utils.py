@@ -1,8 +1,8 @@
 import json
 import os  # библиотека для взаимодействия с операционной системой ПК
 
-from src.task import Task
-from src.user import User
+from task import Task
+from user import User
 
 
 def read_json(path: str) -> dict:
