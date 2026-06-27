@@ -13,15 +13,40 @@
 
 
 class Person:
-    pass
+    def __init__(self, name, age):
+        """Конструктор класса — срабатывает автоматически при создании нового человека"""
+        self.name = name  # Сохраняем имя в атрибут объекта
+        self.age = age    # Сохраняем возраст в атрибут объекта
+
+    def get_name(self):
+        """Метод безопасно возвращает имя человека"""
+        return  self.name # Возвращаем значение атрибута name
+
+    def get_age(self):
+        """Метод безопасно возвращает возраст человека"""
+        return self.age  # Возвращаем значение атрибута age
+
+
+# Объявляем класс Student, наследует все свойства класса Person
+class Student(Person):
+    def __init__(self, name, age, major):
+        """Конструктор класса — принимает параметры для человека + предмет студента"""
+        super().__init__(name, age)
+        self.major = major
+
+    def get_major(self):
+        """Метод возвращает основной предмет студента"""
+        return self.major # Возвращаем значение атрибута major
+
+
 
 
 # код для проверки
 person = Person("Иван", 25)
-print(person.get_name())  # Иван
-print(person.get_age())  # 25
+print(person.get_name())  # >>> Иван
+print(person.get_age())  # >>> 25
 
 student = Student("Мария", 20, "математика")
-print(student.get_name())  # Мария
-print(student.get_age())  # 20
-print(student.get_major())  # математика
+print(student.get_name())  # >>> Мария
+print(student.get_age())  # >>> 20
+print(student.get_major())  # >>> математика
